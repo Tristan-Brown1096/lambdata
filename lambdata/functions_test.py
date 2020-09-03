@@ -6,18 +6,21 @@ from functions import MyDataFrame
 from example_module import TEST
 import pandas as pd
 
+DATA_PATH = 'https://raw.githubusercontent.com/LambdaSchool/DS-Unit-2-Kaggle-Challenge/master/data/'
+
+
 class FunctionsTest(unittest.TestCase):
     """Making sure the object functions properly"""
     def setUp(self):
-        self.df = MyDataFrame(pd.read_csv('https://raw.githubusercontent.com/Tristan-Brown1096/DS-Unit-2-Kaggle-Challenge/master/data/waterpumps/test_features.csv',
-        parse_dates=['date_recorded']))
-        
+        self.df = MyDataFrame
+        (pd.read_csv(DATA_PATH+'waterpumps/train_features.csv'
+                     parse_dates=['date_recorded']))
 
     def test_mydataframe(self):
         """Tests that the dataframe imports properly"""
         df = MyDataFrame(pd.DataFrame(TEST))
         self.assertTrue(df[0][0], pd.DataFrame(TEST)[0][0])
-    
+
     def test_wrangle(self):
         df = self.df.wrangle()
         self.assertEqual(df.shape, (14358, 32))
