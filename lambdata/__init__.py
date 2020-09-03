@@ -4,4 +4,3 @@ import pandas as pd
 import numpy as np
 from scipy import stats
 
-TEST = pd.DataFrame(np.ones(10))
