@@ -12,8 +12,7 @@ DATA_PATH = 'https://raw.githubusercontent.com/LambdaSchool/DS-Unit-2-Kaggle-Cha
 class FunctionsTest(unittest.TestCase):
     """Making sure the object functions properly"""
     def setUp(self):
-        self.df = MyDataFrame
-        (pd.read_csv(DATA_PATH+'waterpumps/train_features.csv'
+        self.df = MyDataFrame(pd.read_csv(DATA_PATH+'waterpumps/test_features.csv',
                      parse_dates=['date_recorded']))
 
     def test_mydataframe(self):
